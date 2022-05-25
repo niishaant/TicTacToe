@@ -11,13 +11,15 @@ def printBoard(xState , zState):
     seven = 'X' if xState[7] else ('O' if zState[7]  else 7)
     eight = 'X' if xState[8] else ('O' if zState[8]  else 8)
     
+     #CREATING BOARD
     print(f" {zero} |{one} |{two}  ")    
-    print(f" --|--|--")
+    print(f" --|--|--")                  
     print(f" {three} |{four} |{five} ") 
     print(f"---|--|--")
     print(f" {six} |{seven} |{eight}")    
 
 def checkWin(xState , zState):
+    #POSSIBLE WINNING PATTERNS
     wins = [[0,1,2],[0,3,6],[2,5,8],[6,7,8],[3,4,5],[0,4,8],[2,4,6],[1,4,7]]
     for win in wins:
         if (sum(xState[win[0]],xState[win[1]],xState[win[2]]) == 3):
@@ -28,10 +30,11 @@ def checkWin(xState , zState):
             return 0
     return -1
 
-if __name__ == "__main__":    #means that function will be called but code doesn't execute!
+if __name__ == "__main__":   
     xState = [0,0,0,0,0,0,0,0,0]
     zState = [0,0,0,0,0,0,0,0,0]
-    turn  = 1 #turn 1 for x and 0 for o
+    #turn 1 for x and 0 for o
+    turn  = 1 
     print("WELCOME TO TIC TAC TOE!")
 
     while(True):
